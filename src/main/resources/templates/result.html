@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/result.css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <title>Result</title>
+</head>
+<body>
+    <header>
+        <!--导航栏-->
+        <div id="navigation">
+            <el-menu
+              :default-active="activeIndex"
+              class="el-menu-demo"
+              mode="horizontal"
+              @select="handleSelect"
+              background-color="#545c64"
+              text-color="#fff"
+              active-text-color="#ffd04b"
+              >
+
+              <el-menu-item index="1"><a href="./"><span class="navi-text">Home page</span></a></el-menu-item>
+
+              <el-submenu index="2">
+                <template slot="title"><span class="navi-text">Login</span></template>
+                <el-menu-item index="2-1"><a href="./userLogin.html">User Login</a></el-menu-item>
+                <el-menu-item index="2-2"><a href="./adminLogin.html">Manager Login</a></el-menu-item>
+
+              </el-submenu>
+              <el-menu-item index="3"><a href="./shouldToKnow.html"><span class="navi-text">Health Check Questionnaire</span></a></el-menu-item>
+
+              <el-menu-item index="4"><span class="navi-text">Health Check Result</span></el-menu-item>
+              <el-menu-item index="5"><a href="./sign_in.html"><span class="navi-text">New User? Click here to sign in!</span></a></el-menu-item>
+              <el-menu-item index="6" class="about-us"><a href="https://albatel.ie/about-us/"><span class="navi-text">About us</span></a></el-menu-item>
+            </el-menu>
+          </div>
+    </header>
+
+
+    <div class="container">
+        
+        <h1>Your Report</h1>
+        <div class="result">
+            <h4>下载您的结果报告:</h4>
+            <a href="#">report_link</a>
+        </div>
+    
+
+        <div id="comment">
+            <div class="block">
+              <span class="demonstration">区分颜色</span>
+              <el-rate
+                v-model="value"
+                :colors="colors">
+              </el-rate>
+            </div>
+            </div>
+    </div>
+
+
+    <footer></footer>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    var Main = {
+    data() {
+      return {
+        activeIndex: '4'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#navigation')
+
+</script>
+<script>
+    var Main = {
+    data() {
+      return {
+        value:null,
+        colors: ['#99A9BF', '#F7BA2A', '#FF9900']  // 等同于 { 2: '#99A9BF', 4: { value: '#F7BA2A', excluded: true }, 5: '#FF9900' }
+      }
+    }
+  }
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#comment')
+</script>
+</html>

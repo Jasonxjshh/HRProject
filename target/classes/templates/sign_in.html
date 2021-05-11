@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./css/adjustment.css">
+    <style>
+      *{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    margin-bottom: 10px;
+}
+.navi-text{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    font-size: larger;
+}
+.el-menu-item a{
+    text-decoration: none;
+}
+.container{
+    position: relative;
+    height: 700px;
+    margin: 0px auto;
+    margin-bottom: 30px;
+}
+#myform{
+    margin-top: 60px;
+}
+.form-group{
+  position: relative;
+}
+.form-control{
+  position: relative;
+  width: 480px;
+  height: 40px;
+  margin: 0 auto;
+  }
+label{
+  display: block;
+  width: 480px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+.code-input{
+  position: relative; 
+  font-size: 14px;
+  display: inline-block;
+  width: 400px; 
+  height: 40px;
+}
+.error-message{
+  position: absolute; 
+  left: 860px; 
+  top: 9px;
+  color: #fcf826;
+  text-shadow: 3px 3px 8px #faa729; 
+  font-weight: bold;
+  display: none;
+}
+.mention{
+  font-weight: lighter;
+}
+.alarm-box{
+  border: #fcf826 1px solid; 
+  box-shadow:0 0 10px #fcf826 
+}
+</style>
+</head>
+<body>
+  
+    <header>
+      <!--导航栏-->
+      <div id="navigation">
+      <el-menu
+        :default-active="activeIndex"
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b"
+        >
+
+        <el-menu-item index="1"><a href="./"><span class="navi-text">Home page</span></a></el-menu-item>
+
+              <el-submenu index="2">
+                <template slot="title"><span class="navi-text">Login</span></template>
+                <el-menu-item index="2-1"><a href="./userLogin.html">User Login</a></el-menu-item>
+                <el-menu-item index="2-2"><a href="./adminLogin.html">Manager Login</a></el-menu-item>
+
+              </el-submenu>
+              <el-menu-item index="3"><a href="./shouldToKnow.html"><span class="navi-text">Health Check Questionnaire</span></a></el-menu-item>
+
+              <el-menu-item index="4"><a href="./result.html"><span class="navi-text">Health Check Result</span></a></el-menu-item>
+              <el-menu-item index="5"><span class="navi-text">New User? Click here to sign in!</span></el-menu-item>
+              <el-menu-item index="6" class="admin-only" disabled><span class="navi-text">Administrator Only</span></el-menu-item>
+      </el-menu>
+    </div>
+  </header>
+
+    <div class="container">
+      <h1 style="font-size: 60px;text-align: center; margin-top: 70px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-shadow: 5px 5px 8px  #aaa;">Sign In</h1>
+      <!--注册表单-->
+       <form action="/toSignIn" class="form-horizontal" role="form" id="myform" method="POST" onsubmit="return fuckSubmit()">
+          <!--用户名-->
+          <label for="u-input-username">Username:<span class="mention"> (consisted with 6~12 letters, numbers and _)</span></label>
+          <div class="form-group" >
+              <input type="text" class="form-control" id="user-name" placeholder="Your user name" name="UserName">
+            <p class="error-message" id="em1">username 错误信息</p>
+          </div>
+       
+          <!--密码-->
+          <label for="u-input-password">Password:<span class="mention"> (6~12)</span></label>
+          <div class="form-group">
+              <input type="password" class="form-control" id="user-password" placeholder="Your password" name="UserPassword">
+            <p class="error-message" id="em2">password 错误信息</p>
+          </div>
+
+          <!--确认密码-->
+          <label for="u-input-password2">Confirming Password:<span class="mention"> (make sure it is same as your password)</span></label>
+          <div class="form-group">
+              <input type="password" class="form-control" id="user-password2" placeholder="Confirm your password" name="ReUserPwd">
+            <p class="error-message" id="em3">password 错误信息</p>
+          </div>
+
+          <!--邮箱、手机号-->
+          <label for="u-input-email">Email:<span class="mention">(which you always use)</span></label>
+          <div class="form-group">
+              <input type="email" class="form-control" id="user-email" placeholder="Your Email" name="UserEmail">
+            <p class="error-message" id="em4">email 错误信息</p>
+          </div>
+
+          <!--验证码-->
+          <label for="u-input-code">Verification Code:<span class="mention"></span></label>
+          <div class="form-group">
+            <div class="form-code-group row" style="margin: 0 auto; width: 480px; height: 40px;">
+              <input type="text" id="user-code" class="form-control" style=" width: 300px; float: left;" placeholder="Verification Code" name="V_code">
+                <a id="get-code" class="btn btn-info" style="height: 40px; width: 180px;"><span style="position: absolute; top: 9px; left: 20px;">Click here to get code</span></a>
+            </div>
+          </div>
+
+          <!--提交按钮-->
+          <div class="form-group">
+            <div class="u-submit" style="margin-top: 28px;">
+              <input type="submit" class="form-control btn-primary" id="user-submit" value="Create an account" disabled>
+            </div>
+
+            <a href="/userLogin" style="position: absolute; left: 700px; top: 80px; text-decoration: underline; font-size: 17px; color: oldlace;"><span>Already have account? Click here to login</span></a>
+          </div>
+       </form>
+         
+      
+    </div>
+    
+    <!--背景-->
+    <div class="main">
+      <div class="shadow"></div>
+      <div class="boy">
+        <div class="leg leg-r">
+          <div class="leg-top">
+            <div class="leg-bottom">
+              <div class="leg-foot">  </div>
+            </div>
+          </div>
+        </div>
+        <div class="c">
+          <div class="ear">
+            <div class="ear-r"></div>
+          </div>
+          <div class="arm-r"></div>
+          <div class="torso"></div>
+          <div class="face">
+            <div class="face__eye-l"></div>
+            <div class="face__eye-r"></div>
+            <div class="face__nose"></div>
+            <div class="face__mouth"> </div>
+            <div class="face__bubble"></div>
+          </div>
+          <div class="hair-b">
+            <div class="hair-b__a hair-a--i"></div>
+            <div class="hair-b__b hair-a--i"></div>
+            <div class="hair-b__c hair-a--i"></div>
+            <div class="hair-b__d hair-a--i"> </div>
+          </div>
+          <div class="cap">
+            <div class="cap__bottom"></div>
+            <div class="cap__top"></div>
+            <div class="cap__center">  </div>
+          </div>
+          <div class="hair-a">
+            <div class="hair-a__a hair-a--i"></div>
+            <div class="hair-a__b hair-a--i"></div>
+            <div class="hair-a__c hair-a--i"></div>
+          </div>
+          <div class="ear">
+            <div class="ear-l">  </div>
+          </div>
+          <div class="pants"></div>
+          <div class="t-shirt"></div>
+          <div class="jacket"></div>
+          <div class="arm-l"></div>
+        </div>
+        <div class="leg leg-l">
+          <div class="leg-top">
+            <div class="leg-bottom">
+              <div class="leg-foot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    <figure>
+      <div class="image-block">
+        <span>
+          <img src="images/magic-box.gif" style="cursor:zoom-in;">
+        </span>
+      </div>
+    </figure>
+-->
+</body>
+<script src="./js/script.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    var Main = {
+    data() {
+      return {
+        activeIndex: '5'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#navigation')
+
+</script>
+<script>
+  
+
+  
+  /*检查用户名*/
+  function checkUsername(){
+        var username = $('#user-name').val();
+        var em1 = $('#em1');
+        if(username.match(/^\w{6,12}$/) == null && username.length > 0){
+           em1.text('unqualified username !').css('display','block');
+           $('#user-name').addClass('alarm-box');
+            return false;
+        }
+        else{
+           em1.css('display','none');
+           $('#user-name').removeClass('alarm-box');
+           return true;
+        }
+    }
+    $('#user-name').blur(checkUsername);
+    $('#user-name').blur(formValidate);
+    /*检查密码*/
+    function checkPassword(){
+      var password = $('#user-password').val();
+      var em2 = $('#em2');
+      if($('#user-password2').val().length > 0){
+        checkPassword2();
+      }
+      if(password.match(/^\w{6,12}$/) == null && password.length > 0){
+        em2.text("unqualified password !").css('display','block');
+        $('#user-password').addClass('alarm-box');
+        return false;
+      }else{
+        em2.css('display','none');
+        $('#user-password').removeClass('alarm-box');
+        return true;
+      }
+    }
+    $('#user-password').blur(checkPassword);
+    $('#user-password').blur(formValidate);
+    /*检查确认密码*/
+    function checkPassword2(){
+      var password = $('#user-password').val();
+      var password2 = $('#user-password2').val();
+      var em3 = $('#em3');
+      if(password2 === password ){
+        em3.css('display','none');
+        $('#user-password2').removeClass('alarm-box');
+        return true;
+      }else{
+        em3.text('Confirming password and your password disagree ! ').css('display','block');
+        $('#user-password2').addClass('alarm-box');
+        return false;
+      }
+    }
+    $('#user-password2').blur(checkPassword2);
+    $('#user-password2').blur(formValidate);
+    /*检查邮箱*/
+    var email;
+    function checkEmail(){
+        email = $('#user-email').val();
+      var em4 = $('#em4');
+      if(email.match(/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/) == null && email.length > 0){
+          em4.text('Invalid email !').css('display','block');
+          $('#user-email').addClass('alarm-box');
+          return false;
+      }else{
+        em4.css('display','none');
+        $('#user-email').removeClass('alarm-box');
+        return true;
+      }
+    }
+    $('#user-email').blur(checkEmail);
+    $('#user-email').blur(formValidate);
+    /*获得和检查验证码*/
+      var code;
+      $('#get-code').click(function(){
+          $.post("/sendCode","email="+email,function(rs){
+              code = rs.code;
+          });
+      });
+      var inputCode;
+      function checkCode(){
+              inputCode = $('#user-code').val();
+              if(inputCode.length >0){
+                  return true;
+              }else {
+                  return false;
+              }
+      }
+      $('#user-code').blur(checkCode);
+      $('#user-code').blur(formValidate);
+    /*检查表单*/
+    function formValidate(){
+      if( ($('#user-name').val().length > 0 && $('#user-password').val().length > 0 && $('#user-password2').val().length > 0 && $('#user-email').val().length > 0 && code!= null ) && checkUsername() && checkPassword() && checkPassword2() && checkEmail() && checkCode()){
+          $('#user-submit').attr('disabled',false);
+          return true;
+      }else{
+        $('#user-submit').attr('disabled',true);
+        return false;
+      }
+    }
+
+    function fuckSubmit(){
+        if( ($('#user-name').val().length > 0 && $('#user-password').val().length > 0 && $('#user-password2').val().length > 0 && $('#user-email').val().length > 0  ) && checkUsername() && checkPassword() && checkPassword2() && checkEmail() && checkCode()){
+            if(inputCode === code){
+                return true;
+            }else{
+                alert("验证码错误！");
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
+</script>
+</html>

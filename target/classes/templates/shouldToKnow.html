@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/shouldToKnow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" href="css/owl.theme.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/lightcase.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/line-awesome.css"/>
+    <link rel="stylesheet" href="css/nounicon.css"/>
+
+    <link rel="stylesheet" href="css/settings.css"/>
+    <link rel="stylesheet" href="css/preset.css"/>
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/responsive.css"/>
+    <title>Should To Know</title>
+</head>
+<body>
+    <header>
+        <!--导航栏-->
+        <div id="navigation">
+          <el-menu
+            :default-active="activeIndex"
+            class="el-menu-demo"
+            mode="horizontal"
+            @select="handleSelect"
+            background-color="#545c64"
+            text-color="#fff"
+            active-text-color="#ffd04b"
+            >
+    
+            <el-menu-item index="1"><a href="./"><span class="navi-text">Home page</span></a></el-menu-item>
+
+              <el-submenu index="2">
+                <template slot="title"><span class="navi-text">Login</span></template>
+                <el-menu-item index="2-1"><a href="./userLogin.html">User Login</a></el-menu-item>
+                <el-menu-item index="2-2"><a href="./adminLogin.html">Manager Login</a></el-menu-item>
+
+              </el-submenu>
+              <el-menu-item index="3"><span class="navi-text">Health Check Questionnaire</span></el-menu-item>
+
+              <el-menu-item index="4"><a href="./result.html"> <span class="navi-text">Health Check Result</span></a></el-menu-item>
+              <el-menu-item index="5"><a href="./sign_in.html"><span class="navi-text">New User? Click here to sign in!</span></a></el-menu-item>
+              <el-menu-item index="6" class="about-us"><a href="https://albatel.ie/about-us/"><span class="navi-text">About us</span></a></el-menu-item>
+          </el-menu>
+        </div>
+      </header>
+      
+      
+
+
+
+      <section class="introduction">
+        <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center noPadding">
+              <h2 class="sec_title" >
+                  Content about our questionnaire
+              </h2>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 text-center">
+              <p class="vor_lead">
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              </p>
+              <a href="aboutus.html" class="vor_btn_1">More About Us<i class="noun-noun_Arrow_1896673"></i></a>
+          </div>
+        </div>
+      </div>
+      </section>
+
+
+      <section class="tips">
+        <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center noPadding">
+              <h2 class="sec_title" >
+                  Before going through those questions, what should you know?
+              </h2>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 text-center">
+              <p class="vor_lead">
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              </p>
+              <a href="questionA.html" class="vor_btn_1">I am ready!<i class="noun-noun_Arrow_1896673"></i></a>
+          </div>
+        </div>
+      </div>
+      </section>
+
+
+
+
+
+
+      <figure>
+        <div class="image-block">
+          <span>
+            <img src="images/magic-box.gif" style="cursor:zoom-in;">
+          </span>
+        </div>
+      </figure>
+      
+      <footer></footer>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <!-- Include All JS -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.js"></script>
+  <script src="js/jquery.appear.js"></script>
+  <script src="js/jquery.shuffle.min.js"></script>
+  <script src="js/lightcase.js"></script>
+  <script src="js/gmaps.js"></script>
+  <script src="http://www.google.cn/maps/api/js?key=AIzaSyBJtPMZ_LWZKuHTLq5o08KSncQufIhPU3o"></script>
+  <script>
+    var Main = {
+    data() {
+      return {
+        activeIndex: '3'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#navigation')
+
+</script>
+</html>

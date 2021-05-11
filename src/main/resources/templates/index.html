@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/adjustment.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <!-- Include All CSS here-->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" href="css/owl.theme.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/lightcase.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/line-awesome.css"/>
+    <link rel="stylesheet" href="css/nounicon.css"/>
+    
+    <!-- Revolution Slider Setting CSS -->
+    <link rel="stylesheet" href="css/settings.css"/>
+    <link rel="stylesheet" href="css/preset.css"/>
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/responsive.css"/>
+    <!-- End Include All CSS -->
+</head>
+<body>
+
+<!-- Preloader Start -->
+<div class="preloader">
+  <div class="preloader-inner">
+      <div class="loader-logo"></div>
+      <div class="preloader-box">
+          <div class="letter">L</div>
+          <div class="letter">O</div>
+          <div class="letter">A</div>
+          <div class="letter">D</div>
+          <div class="letter">I</div>
+          <div class="letter">N</div>
+          <div class="letter">G</div>
+      </div>
+  </div>
+</div>
+<!-- Preloader End -->
+
+
+    <header>
+        <!--导航栏-->
+        <div id="navigation">
+            <el-menu
+              :default-active="activeIndex"
+              class="el-menu-demo"
+              mode="horizontal"
+              @select="handleSelect"
+              background-color="#545c64" 
+              
+              text-color="#fff"
+              active-text-color="#ffd04b"
+              >
+
+              <el-menu-item index="1"><span class="navi-text">Home page</span></el-menu-item>
+
+              <el-submenu index="2">
+                <template slot="title"><span class="navi-text">Login</span></template>
+                <a href="./userLogin.html"><el-menu-item index="2-1">User Login</el-menu-item></a>
+                <a href="./adminLogin.html"><el-menu-item index="2-2">Manager Login</el-menu-item></a>
+
+              </el-submenu>
+              <el-menu-item index="3"><a href="./shouldToKnow.html"><span class="navi-text">Health Check Questionnaire</span></a></el-menu-item>
+
+              <el-menu-item index="4"><a href="./result.html"><span class="navi-text">Health Check Result</span></a></el-menu-item>
+              <el-menu-item index="5"><a href="./sign_in.html"><span class="navi-text">New User? Click here to sign in!</span></a></el-menu-item>
+              <el-menu-item index="6" class="about-us"><a href="https://albatel.ie/about-us/"><span class="navi-text">About us</span></a></el-menu-item>
+            </el-menu>
+          </div>
+    </header>
+    
+    
+
+
+<!--轮播图-->
+    <section class="slider">
+      <div class="rev_slider_wrapper">
+          <div id="rev_slider_1" class="rev_slider" data-version="5.4.5" style="display:none">
+              <ul>
+
+                  <!-- MINIMUM SLIDE STRUCTURE -->
+                  <li data-transition="random-premium" data-masterspeed="1000">
+
+                      <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                      <img src="images/1-5.jpg" alt="pic1" class="rev-slidebg">
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1200,"speed":2000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left" 
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['-80']" 
+                           data-width="['850', '800', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+                           data-fontsize="['60', '50', '45', '30']"
+                           data-lineheight="['60', '55', '50', '40']"
+                           data-fontweight="['700']"
+                           data-color="['#FFF']"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           >We are currently working remotely & available nationwide!</div>
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left" 
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['23', '20', '20', '25']"
+                           data-width="['650', '650', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+                           data-fontsize="['20', '20', '20', '20']"
+                           data-lineheight="['20', '20', '20', '26']"
+                           data-fontweight="['300']"
+                           data-color="['#FFF']"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           >April 28, 2021 – Its business, almost as usual! 
+                            </div>
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1800,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left"
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['89', '89', '89', '140']"
+                           data-width="['650', '100%', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+
+                           data-fontsize="16"
+                           data-lineheight="['30', '30', '30', '30']"
+                           data-fontweight="500"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           ><a href="shouldToKnow.html" class="vor_btn_1 mr13">Learn More<i class="noun-noun_Arrow_1896673"></i></a><a href="https://albatel.ie/" class="vor_btn_1 vb_reverse">Get In Touch<i class="noun-noun_Arrow_1896673"></i></a></div>
+                  </li>
+                  <!-- MINIMUM SLIDE STRUCTURE -->
+                  <li data-transition="random-premium" data-masterspeed="1000">
+
+                      <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                      <img src="images/1-2.jpg" alt="pic2" class="rev-slidebg">
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1200,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left" 
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['-80']" 
+                           data-width="['850', '800', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+                           data-fontsize="['60', '50', '45', '30']"
+                           data-lineheight="['60', '55', '50', '40']"
+                           data-fontweight="['700']"
+                           data-color="['#FFF']"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           >We will give a reflection of each one's mental condition.</div>
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left" 
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['23', '20', '20', '25']"
+                           data-width="['650', '650', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+                           data-fontsize="['20', '20', '20', '20']"
+                           data-lineheight="['20', '20', '20', '26']"
+                           data-fontweight="['300']"
+                           data-color="['#FFF']"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           >We think it's really important to know and care about yourselves.</div>
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1800,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left"
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['89', '89', '89', '140']"
+                           data-width="['650', '100%', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+
+                           data-fontsize="16"
+                           data-lineheight="['30', '30', '30', '30']"
+                           data-fontweight="500"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           ><a href="shouldToKnow.html" class="vor_btn_1 mr13">Learn More<i class="noun-noun_Arrow_1896673"></i></a><a href="https://albatel.ie/" class="vor_btn_1 vb_reverse">Get In Touch<i class="noun-noun_Arrow_1896673"></i></a></div>
+                  </li>
+                  <!-- MINIMUM SLIDE STRUCTURE -->
+                  <li data-transition="random-premium" data-masterspeed="1000">
+
+                      <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                      <img src="images/1-4.jpg" alt="pic3" class="rev-slidebg">
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1200,"speed":2000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left" 
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['-80']" 
+                           data-width="['850', '800', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+                           data-fontsize="['60', '50', '45', '30']"
+                           data-lineheight="['60', '55', '50', '40']"
+                           data-fontweight="['700']"
+                           data-color="['#FFF']"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           >Finish the Questionnaire first before your result comes.</div>
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left" 
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['23', '20', '20', '25']"
+                           data-width="['650', '650', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+                           data-fontsize="['20', '20', '20', '20']"
+                           data-lineheight="['20', '20', '20', '26']"
+                           data-fontweight="['300']"
+                           data-color="['#FFF']"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           >Our team is here and available now to support you in reaching your people and performance goals.</div>
+                      <div class="tp-caption tp-resizeme normalWraping" 
+
+                           data-frames='[{"delay":1800,"speed":2000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                           {"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
+
+                           data-x="left"
+                           data-y="center" 
+                           data-hoffset="0" 
+                           data-voffset="['89', '89', '89', '140']"
+                           data-width="['650', '100%', '700', '100%']"
+                           data-height="['auto]"
+                           data-whitesapce="['normal']"
+
+                           data-fontsize="16"
+                           data-lineheight="['30', '30', '30', '30']"
+                           data-fontweight="500"
+                           data-textAlign="['left', 'left', 'center', 'center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,20]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,10,0,20]"
+                           ><a href="shouldToKnow.html" class="vor_btn_1 mr13">Learn More<i class="noun-noun_Arrow_1896673"></i></a><a href="https://albatel.ie/" class="vor_btn_1 vb_reverse">Get In Touch<i class="noun-noun_Arrow_1896673"></i></a></div>
+                  </li>
+              </ul><!-- END SLIDES LIST -->
+          </div>
+      </div>
+  </section>
+
+  <section class="welcome">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center noPadding">
+          <h4 class="text-uppercase sec_sub_title" style="color: chartreuse;">Welcome to ALBATEL</h4>
+          <h2 class="sec_title" >
+              We are a digital brand and experience innovation company
+          </h2>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 text-center">
+          <p class="vor_lead">
+            At Albatel, we believe that profitable businesses grow from profitable and well-managed teams, 
+            and that Human Resources are the most valuable resources a business has. 
+            Through effective outsourced Human Resources Management, 
+            we empower businesses on the island of Ireland to achieve their strategic business goals.
+          </p>
+          <a href="https://albatel.ie/about-us/" class="vor_btn_1">More About Us<i class="noun-noun_Arrow_1896673"></i></a>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="our_process_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-12">
+                <div class="ps_content">
+                    <h4 class="text-uppercase sec_sub_title">Our Process</h4>
+                    <h2 class="sec_title">
+                        Create.Develop. Deployment
+                    </h2>
+                    <p class="pdr50 vor_lead mb27">
+                      We support many sectors and industries, and we support business at all stages of 
+                      growth from high-potential start-ups, to well established companies producing turnover 
+                      in the millions. While our comprehensive human resource outsourcing and payroll 
+                      management solutions are fully tailored for businesses of all sizes, 
+                      we create the greatest impact when working with growth oriented businesses with 
+                      50 or more employees.
+                    </p>
+                    <a href="https://albatel.ie/about-us/" class="vor_btn_1 sxs">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <div class="pr_img tw-stretch-element-inside-column">
+                    <img src="images/1-3.jpg" style="position: relative; margin-top: 18%;" alt="ALBATEL"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+<section class="whatwedo">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+              <h4 class="text-uppercase sec_sub_title">What We Do</h4>
+              <h2 class="sec_title">
+                  We help you obtain a fully outsourced HR management solution
+              </h2>
+              <p class="vor_lead">
+                We offer a range of outsourced HR functions and practices, which can be delivered  as a short term projects or as a fully outsourced HR management solution to meet your needs over a long period of time.
+                Our solutions can also be modified over time, as your needs change.
+              </p>
+              <a href="shouldToKnow.html" class="vor_btn_1 sxs">Click here, you can get a reflection after finishing the questionnaire<i class="noun-noun_Arrow_1896673"></i></a>
+          </div>
+      </div>
+     
+      <div class="row">
+          <div class="col-lg-12"><div class="vor_hr mt90"></div></div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <footer></footer>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    var Main = {
+    data() {
+      return {
+        activeIndex: '1'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#navigation')
+
+</script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+        <!-- Include All JS -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/jquery.appear.js"></script>
+        <script src="js/jquery.shuffle.min.js"></script>
+        <script src="js/lightcase.js"></script>
+        <script src="js/gmaps.js"></script>
+        <script src="http://www.google.cn/maps/api/js?key=AIzaSyBJtPMZ_LWZKuHTLq5o08KSncQufIhPU3o"></script>
+        
+        <!-- Slider Revolution Main Files -->
+        <script src="js/jquery.themepunch.tools.min.js"></script>
+        <script src="js/jquery.themepunch.revolution.min.js"></script>
+
+        <!-- Slider Revolution Extension -->	
+        <script src="js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="js/extensions/revolution.extension.video.min.js"></script>
+
+        <script src="js/theme.js"></script>
+        <!-- Include All JS -->
+</html> 
